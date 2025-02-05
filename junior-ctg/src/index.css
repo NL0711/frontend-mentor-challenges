@@ -1,4 +1,7 @@
-body {
+html,body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-image: url("/assets/images/background-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -6,7 +9,7 @@ body {
 
 #root {
   display: grid;
-  grid-template-rows: 50px 1fr 50px;
+  grid-template-rows: 2rem 1fr 4rem;
   place-items: center;
   font-family: "Inconsolata", serif;
   color: hsl(0, 0%, 100%);
@@ -20,8 +23,8 @@ body {
 
 header {
   display: flex;
-  width: 140px;
-  height: 30px;
+  width: 8rem;
+  height: 2rem;
   transform: translateX(-20px);
 }
 
@@ -31,64 +34,7 @@ header {
 }
 
 .container {
-  /* width: 500px; */
   place-items: center;
-}
-
-.title {
-  text-align: center;
-}
-
-.heading {
-  font-weight: 800;
-  font-size: 2.5rem;
-  margin-bottom: 0px;
-}
-
-.subheading {
-  color: hsl(252, 6%, 83%);
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-form {
-  display: grid;
-  align-items: center;
-  width: 350px;
-  grid-template-rows: 2fr repeat(4, 1fr);
-  font-size: 12px;
-}
-
-.info {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-input,.submit {
-  width: 100%;
-  border-radius: 6px;
-  font-family: "Inconsolata", serif;
-  box-sizing: border-box;
-}
-
-input {
-  height: 2rem;
-  border: 3px;
-  padding-left: 8px;
-  border-color: hsl(245, 15%, 58%);
-  background-color: hsl(245, 19%, 35%);
-  font-weight: 500;
-}
-
-.submit {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: hsl(7, 88%, 67%);
-  color: hsl(248, 70%, 10%);
-  border: 0;
-  font-family: "Inconsolata", serif;
-  font-weight: 900;
 }
 
 .attribution {

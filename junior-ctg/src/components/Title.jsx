@@ -1,5 +1,6 @@
-function Title() {
+import './Title.css'
 
+export default function Title() {
   return (
     <div id="title">
       <p className="heading">Your Journey to Coding Conf <br /> 2025 Starts Here!</p>
@@ -7,5 +8,3 @@ function Title() {
     </div>
   )
 }
-
-export default Title
