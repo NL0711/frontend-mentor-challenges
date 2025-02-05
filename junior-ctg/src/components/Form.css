@@ -4,6 +4,7 @@ form {
   width: 350px;
   grid-template-rows: 2fr repeat(4, 1fr);
   font-size: 12px;
+  row-gap: 1rem;
 }
 
 .info {
@@ -44,4 +45,5 @@ input {
   border: 0;
   font-family: "Inconsolata", serif;
   font-weight: 900;
+  cursor: pointer;
 }
