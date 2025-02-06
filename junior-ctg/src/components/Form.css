@@ -1,16 +1,47 @@
 form {
   display: grid;
   align-items: center;
-  width: 350px;
+  width: 21rem;
   grid-template-rows: 2fr repeat(4, 1fr);
-  font-size: 12px;
-  row-gap: 1rem;
+  font-size: 0.8rem;
+  row-gap: 0.8rem;
+}
+
+.avatar {
+  display: grid;
+  row-gap: 0.2rem;
+  align-items: center;
+}
+
+#drag-drop-text, #drag-drop-bg {
+  grid-area: 2/1;
+}
+
+#drag-drop-bg {
+  height: 3rem;
+  border: 0.1rem dashed hsl(245, 19%, 35%);
+  border-radius: 0.2rem;
+  padding: 1rem;
+  background-color: hsl(245, 19%, 35%, 0.2);
+}
+
+#preview-avatar {
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#avatar-img {
+  width: 100%;
+  object-fit: contain;
 }
 
 .info {
   display: flex;
   align-items: center;
   gap: 5px;
+  font-size: 0.7rem;
 }
 
 input,.submit {
@@ -22,9 +53,8 @@ input,.submit {
 
 input {
   height: 2rem;
-  border: 3px;
+  border: 0.1rem solid hsl(245, 15%, 58%);
   padding-left: 8px;
-  border-color: hsl(245, 15%, 58%);
   background-color: hsl(245, 19%, 35%);
   font-weight: 500;
 }
@@ -37,7 +67,6 @@ input {
 }
 
 .submit {
-  margin-top: 1rem;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
   background-color: hsl(7, 88%, 67%);

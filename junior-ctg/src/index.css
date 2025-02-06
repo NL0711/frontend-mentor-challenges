@@ -24,7 +24,7 @@ html,body {
 header {
   display: flex;
   width: 8rem;
-  height: 2rem;
+  height: 1rem;
   transform: translateX(-20px);
 }
 
@@ -38,6 +38,6 @@ header {
 }
 
 .attribution {
-  font-size: 11px; text-align: center; 
+  font-size: 0.8rem; text-align: center; 
   color: hsl(228, 45%, 44%);
 }
