@@ -7,12 +7,6 @@ form {
   row-gap: 0.8rem;
 }
 
-.avatar {
-  display: grid;
-  row-gap: 0.2rem;
-  align-items: center;
-}
-
 #drag-drop-text, #drag-drop-bg {
   grid-area: 2/1;
 }
@@ -23,6 +17,12 @@ form {
   border-radius: 0.2rem;
   padding: 1rem;
   background-color: hsl(245, 19%, 35%, 0.2);
+}
+
+.avatar {
+  display: grid;
+  row-gap: 0.2rem;
+  align-items: center;
 }
 
 #preview-avatar {

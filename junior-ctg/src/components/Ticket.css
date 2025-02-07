@@ -1,0 +1,83 @@
+.ticket-container {
+  min-height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7); 
+}
+
+.ticket-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 14rem;
+  max-width: max-content;
+  background-image: url("/assets/images/pattern-ticket.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  object-fit: contain;
+}
+
+.ticket-info {
+  padding-left: 1.2rem;
+  max-width: min-content;
+  display: grid;
+  grid-template-rows: repeat(2,1fr);
+  grid-template-columns: 22rem 1fr;
+  row-gap: 4rem;
+  column-gap: 2rem;
+  align-items: center;
+  object-fit: contain;
+}
+
+.ticket-avatar {
+  width: 4.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-avatar-img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 0.4rem;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  }
+
+.profile-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+}
+
+.profile-email {
+  font-size: 1rem;
+}
+
+.event-date {
+  font-size: 1rem;
+}
+
+.ticket-no {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  transform: rotate(-90deg);
+  font-size: 1.4rem;
+  color:  hsl(245, 15%, 58%);
+}
