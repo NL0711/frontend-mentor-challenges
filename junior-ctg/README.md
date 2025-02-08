@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./junior-ctg/public/screenshots/Form.png)
-![](./junior-ctg/public/screenshots/Ticket.png)
+![](/junior-ctg/public/screenshots/Form.png)
+![](/junior-ctg/public/screenshots/Ticket.png)
 
 ### Links
 
