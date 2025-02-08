@@ -17,11 +17,14 @@ export default function Form({
     <form onSubmit={handleSubmit} noValidate>
       <div className="avatar">
         <label className="field-name">Upload Avatar</label>
-        <div id="drag-drop-text">
+        {avatar.imgURL === "" &&
+          <div id="drag-drop-text">
           <p>Drag and drop or click to upload</p>
           <img src='/assets/images/icon-upload.svg' />
         </div>
-        <div 
+        }
+        <div
+          tabIndex="0"
           id="drag-drop-bg"
           onDragOver={e => {e.preventDefault()}}
           onDrop={handleDrop}
@@ -55,7 +58,9 @@ export default function Form({
           id="name"
           name="name"
           onBlur={handleOnBlur}
-          type="text"/>
+          style={error.name !== "" ? { border: "1.2px solid hsl(7, 71%, 60%)" } : {}}
+          type="text"
+        />
         {error.name !== "" && <ErrorMsg>{error.name ?? ""}</ErrorMsg>}
       </div>
       <div>
@@ -65,8 +70,9 @@ export default function Form({
           name="email" 
           onBlur={handleOnBlur}
           type="email" 
-
-          placeholder="example@email.com" />
+          style={error.email !== "" ? { border: "1.2px solid hsl(7, 71%, 60%)" } : {}}
+          placeholder="example@email.com" 
+        />
         {error.email !== "" && <ErrorMsg>{error.email ?? ""}</ErrorMsg>}
       </div>
       <div>
@@ -76,7 +82,9 @@ export default function Form({
           name="git" 
           onBlur={handleOnBlur}
           type="text"
-          placeholder="@yourusername" />
+          style={error.git !== "" ? { border: "1.2px solid hsl(7, 71%, 60%)" } : {}}
+          placeholder="@yourusername"
+          />
         {error.git !== "" && <ErrorMsg>{error.git ?? ""}</ErrorMsg>}
       </div>
       <button type="submit" className="submit">Generate My Ticket</button>

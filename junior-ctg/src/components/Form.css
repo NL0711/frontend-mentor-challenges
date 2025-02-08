@@ -12,11 +12,19 @@ form {
 }
 
 #drag-drop-bg {
+  display: flex;
+  justify-content: center;
   height: 3rem;
   border: 0.1rem dashed hsl(245, 19%, 35%);
   border-radius: 0.2rem;
   padding: 1rem;
   background-color: hsl(245, 19%, 35%, 0.2);
+  cursor: pointer;
+}
+
+#drag-drop-bg:hover {
+  background-color: hsl(245, 19%, 45%, 0.4);
+  border-color: hsl(245, 19%, 45%);
 }
 
 .avatar {
@@ -26,7 +34,7 @@ form {
 }
 
 #preview-avatar {
-  width: 3rem;
+  width: 2.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,9 +43,11 @@ form {
 #avatar-img {
   width: 100%;
   object-fit: contain;
+  border-radius: 0.4rem;
 }
 
 .info {
+  padding-top: 0.1rem;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -53,9 +63,10 @@ input,.submit {
 
 input {
   height: 2rem;
-  border: 0.1rem solid hsl(245, 15%, 58%);
+  border: 1.4px solid hsl(245, 15%, 58%);
   padding-left: 8px;
-  background-color: hsl(245, 19%, 35%);
+  background-color: hsla(245, 19%, 35%, 0.3);
+  color: hsl(0, 0%, 100%);
   font-weight: 500;
 }
 
@@ -75,4 +86,8 @@ input {
   font-family: "Inconsolata", serif;
   font-weight: 900;
   cursor: pointer;
+}
+
+.submit:hover {
+  background-color:  hsl(7, 71%, 60%);
 }

@@ -5,11 +5,14 @@ html,body {
   background-image: url("/assets/images/background-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
 #root {
   display: grid;
-  grid-template-rows: 2rem 1fr 4rem;
+  grid-template-rows: 2rem 1fr;
+  row-gap: 2rem;
   place-items: center;
   font-family: "Inconsolata", serif;
   color: hsl(0, 0%, 100%);
@@ -35,9 +38,12 @@ header {
 
 .container {
   place-items: center;
+  transform: scale(0.95);
 }
 
 .attribution {
+  padding-top: 1rem;
   font-size: 0.8rem; text-align: center; 
   color: hsl(228, 45%, 44%);
+
 }

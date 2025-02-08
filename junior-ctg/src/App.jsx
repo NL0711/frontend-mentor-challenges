@@ -118,21 +118,27 @@ function App() {
       </header>
       <main className="container">
         <Title
-          setsubmitted={setsubmitted}
+          submitted={submitted}
           data={data} 
         />
         {!submitted //debugging line for ticket
-          ? 
-          <Form 
-            handleSubmit={handleSubmit} 
-            handleDrop={handleDrop} 
-            handleDragEnter={handleDragEnter} 
-            handleDragLeave={handleDragLeave}
-            handleOnBlur={handleOnBlur}
-            isInDropArea={isInDropArea}
-            error={error}
-            avatar={avatar}
-          />
+          ?
+          <>
+            <Form 
+              handleSubmit={handleSubmit} 
+              handleDrop={handleDrop} 
+              handleDragEnter={handleDragEnter} 
+              handleDragLeave={handleDragLeave}
+              handleOnBlur={handleOnBlur}
+              isInDropArea={isInDropArea}
+              error={error}
+              avatar={avatar}
+            />
+            <div className="attribution">
+              Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+              Coded by <a href="#">NL077</a>.
+            </div>
+          </>
           :
           <Ticket
             avatar={avatar}
@@ -140,10 +146,6 @@ function App() {
           />
         }
       </main>
-      <div className="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-        Coded by <a href="#">NL077</a>.
-      </div>
     </>
   )
 }

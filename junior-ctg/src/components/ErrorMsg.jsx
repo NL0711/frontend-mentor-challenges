@@ -5,7 +5,6 @@ function ErrorMsg(props) {
     <div
       className="info"
       style={{
-        marginTop: "0.2rem",
         color: "hsl(7, 71%, 60%)",
       }}
     >
