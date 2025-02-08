@@ -4,43 +4,47 @@ import PropTypes from 'prop-types';
 
 export default function Form({
   handleSubmit,
-  handleDrop, 
+  handleFile, 
   handleDragEnter, 
   handleDragLeave,
   handleOnBlur,
+  handleKeyDown,
+  handleKeyFileUpload,
   isInDropArea,
   error,
   avatar,
 }) {
-  
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <div className="avatar">
-        <label className="field-name">Upload Avatar</label>
-        {avatar.imgURL === "" &&
-          <div id="drag-drop-text">
-          <p>Drag and drop or click to upload</p>
-          <img src='/assets/images/icon-upload.svg' />
-        </div>
-        }
-        <div
-          tabIndex="0"
-          id="drag-drop-bg"
-          onDragOver={e => {e.preventDefault()}}
-          onDrop={handleDrop}
-          onDragEnter={handleDragEnter}
-          onDragLeave={handleDragLeave}
-          style={{
-            border: isInDropArea ? "2px dashed green" : "",
-          }}
-        >
-        {
-          avatar.imgURL !== "" && 
-            <div id="preview-avatar">
-              <img id="avatar-img" src={avatar.imgURL} />
-            </div>
-        } 
-        </div>
+        <div className="avatar">
+          <label className="field-name">Upload Avatar</label>
+          {avatar.imgURL === "" &&
+            <div id="drag-drop-text">
+            <p>Drag and drop or click to upload</p>
+            <img src='/assets/images/icon-upload.svg' />
+          </div>
+          }
+          <label
+            tabIndex="0"
+            id="drag-drop-bg"
+            htmlFor="fileUpload"
+            onDragOver={e => {e.preventDefault()}}
+            onDrop={handleFile}
+            onDragEnter={handleDragEnter}
+            onDragLeave={handleDragLeave}
+            onKeyDown={handleKeyFileUpload}
+            style={{
+              border: isInDropArea ? "2px dashed green" : "",
+            }}
+          >
+            <input id="fileUpload" type="file" style={{display: "none"}} onChange={handleFile}/>
+          {
+            avatar.imgURL !== "" && 
+              <div id="preview-avatar">
+                <img id="avatar-img" src={avatar.imgURL} />
+              </div>
+          } 
+        </label>
         <div className="info">
           {avatar.isValid
             ?
@@ -87,17 +91,19 @@ export default function Form({
           />
         {error.git !== "" && <ErrorMsg>{error.git ?? ""}</ErrorMsg>}
       </div>
-      <button type="submit" className="submit">Generate My Ticket</button>
+      <button type="submit" className="submit" onKeyDown={handleKeyDown}>Generate My Ticket</button>
     </form>
   )
 }
 
 Form.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  handleDrop: PropTypes.func.isRequired,
+  handleFile: PropTypes.func.isRequired,
   handleDragEnter: PropTypes.func.isRequired,
   handleDragLeave: PropTypes.func.isRequired,
   handleOnBlur: PropTypes.func.isRequired,
+  handleKeyDown: PropTypes.func.isRequired,
+  handleKeyFileUpload: PropTypes.func.isRequired,
   isInDropArea: PropTypes.bool.isRequired,
   error: PropTypes.shape({
     name: PropTypes.string,

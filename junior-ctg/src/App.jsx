@@ -29,11 +29,13 @@ function App() {
 
   const[isInDropArea, setisInDropArea] = useState(false);
 
-  const handleDrop = e => {
+  const handleFile = e => {
     e.preventDefault();
     e.stopPropagation();
     setisInDropArea(false);
-    const file = e.dataTransfer.files[0];
+    
+    //files are handled through Click if true and Drop if false 
+    const file = e.target.files ? e.target.files[0] : e.dataTransfer.files[0];
     const img = {
       imgURL: "",
       errorImgType: "",
@@ -111,6 +113,20 @@ function App() {
     }
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+
+  const handleKeyFileUpload = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById("fileUpload").click();
+    }
+  }
+
   return (
     <>
       <header>
@@ -126,10 +142,12 @@ function App() {
           <>
             <Form 
               handleSubmit={handleSubmit} 
-              handleDrop={handleDrop} 
+              handleFile={handleFile} 
               handleDragEnter={handleDragEnter} 
               handleDragLeave={handleDragLeave}
               handleOnBlur={handleOnBlur}
+              handleKeyDown={handleKeyDown}
+              handleKeyFileUpload={handleKeyFileUpload}
               isInDropArea={isInDropArea}
               error={error}
               avatar={avatar}
